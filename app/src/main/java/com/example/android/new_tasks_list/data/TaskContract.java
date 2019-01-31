@@ -7,7 +7,7 @@ public class TaskContract {
 
     public static final String CONTENT_AUTHORITY = "com.example.android.new_tasks_list";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
-    public static final String PATH_TASKS = "pets";
+    public static final String PATH_TASKS = "tasks";
 
     public static abstract class TaskEntry implements BaseColumns {
         // uri path of the pets table
