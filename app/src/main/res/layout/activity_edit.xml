@@ -28,7 +28,8 @@
             style="@style/task_fields"
             android:id="@+id/task_date"
             android:hint="Date"
-            android:inputType="date"/>
+            android:focusable="false"
+            android:editable="false"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

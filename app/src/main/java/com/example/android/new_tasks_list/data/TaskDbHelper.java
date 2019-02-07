@@ -26,11 +26,11 @@ public class TaskDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //creating the string that contains the SQL statement to create the tasks table
         String CREATE_TASKS_TABLE = "CREATE TABLE " + TaskContract.TaskEntry.TABLE_NAME + "("
-                + TaskContract.TaskEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TaskContract.TaskEntry.TASK_COLUMN_NAME + "TEXT NOT NULL, "
-                + TaskContract.TaskEntry.TASK_COLUMN_DUE_DATE + "TEXT NOT NULL, "
-                + TaskContract.TaskEntry.TASK_COLUMN_DESCRIPTION + "TEXT, "
-                + TaskContract.TaskEntry.TASK_COLUMN_STATE + "TEXT NOT NULL);";
+                + TaskContract.TaskEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TaskContract.TaskEntry.TASK_COLUMN_NAME + " TEXT NOT NULL, "
+                + TaskContract.TaskEntry.TASK_COLUMN_DUE_DATE + " TEXT NOT NULL, "
+                + TaskContract.TaskEntry.TASK_COLUMN_DESCRIPTION + " TEXT, "
+                + TaskContract.TaskEntry.TASK_COLUMN_STATE + " TEXT NOT NULL);";
 
         //executing the create table statement
         db.execSQL(CREATE_TASKS_TABLE);

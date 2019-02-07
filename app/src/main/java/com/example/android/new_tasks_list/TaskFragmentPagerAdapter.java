@@ -1,6 +1,5 @@
 package com.example.android.new_tasks_list;
 
-import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
@@ -14,11 +13,11 @@ public class TaskFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public android.support.v4.app.Fragment getItem(int position) {
         if (position == 0) {
-            return new ListFragment();
+            return new InProgressFragment();
         } else if (position == 1){
-            return new ListFragment();
+            return new CompletedFragment();
         } else {
-            return new ListFragment();
+            return new ArchivedFragment();
         }
     }
 

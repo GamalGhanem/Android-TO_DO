@@ -3,6 +3,12 @@ package com.example.android.new_tasks_list.model;
 import java.util.Date;
 
 public class Task {
+
+    /**
+     * ID given for the task when first created
+     */
+    private int id;
+
     /**
      * descriptive name for the task
      */
@@ -11,7 +17,7 @@ public class Task {
     /**
      * the due date of the task;
      */
-    private Date dueDate;
+    private String dueDate;
 
     /**
      * the detailed description of the task.
@@ -23,11 +29,23 @@ public class Task {
      */
     private String state;
 
+    public final static String INPROGRESS = "In Progress";
+    public final static String COMPLETED = "Completed";
+    public final static String ARCHIVED = "Archived";
 
-    public Task (String name, Date dueDate, String description) {
+    public Task (String name, String dueDate, String description) {
         this.name = name;
         this.dueDate = dueDate;
         this.description = description;
+        state = INPROGRESS;
+    }
+
+    public Task (int id, String name, String dueDate, String description) {
+        this.id = id;
+        this.name = name;
+        this.dueDate = dueDate;
+        this.description = description;
+        state = INPROGRESS;
     }
 
     public String getName() {
@@ -38,11 +56,11 @@ public class Task {
         this.name = name;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 

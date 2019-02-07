@@ -4,8 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
-    app:title="Your To-Do List"
-    app:titleTextColor="@android:color/white"
-    android:elevation="4dp">
+    app:title="@string/title_activity_add">
 
 </android.support.v7.widget.Toolbar>
