@@ -1,7 +1,5 @@
 package com.example.android.new_tasks_list.model;
 
-import java.util.Date;
-
 public class Task {
 
     /**
@@ -29,15 +27,15 @@ public class Task {
      */
     private String state;
 
-    public final static String INPROGRESS = "In Progress";
-    public final static String COMPLETED = "Completed";
-    public final static String ARCHIVED = "Archived";
+    public final static String INPROGRESS_STATE = "In Progress";
+    public final static String COMPLETED_STATE = "Completed";
+    public final static String ARCHIVED_STATE = "Archived";
 
     public Task (String name, String dueDate, String description) {
         this.name = name;
         this.dueDate = dueDate;
         this.description = description;
-        state = INPROGRESS;
+        state = INPROGRESS_STATE;
     }
 
     public Task (int id, String name, String dueDate, String description) {
@@ -45,7 +43,11 @@ public class Task {
         this.name = name;
         this.dueDate = dueDate;
         this.description = description;
-        state = INPROGRESS;
+        state = INPROGRESS_STATE;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

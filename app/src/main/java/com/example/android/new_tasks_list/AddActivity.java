@@ -1,15 +1,12 @@
 package com.example.android.new_tasks_list;
 
 import android.app.DatePickerDialog;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +68,7 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void updateLabel() {
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         editText.setText(sdf.format(myCalendar.getTime()));
@@ -90,10 +87,8 @@ public class AddActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_save:
                 addTask();
-                Log.v("insert", "before.........................................................");
                 Intent newIntent = new Intent(AddActivity.this, MainActivity.class);
                 startActivity(newIntent);
-                Log.v("insert", "after.........................................................");
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -119,12 +114,12 @@ public class AddActivity extends AppCompatActivity {
         values.put(TaskContract.TaskEntry.TASK_COLUMN_NAME, taskName);
         values.put(TaskContract.TaskEntry.TASK_COLUMN_DUE_DATE, taskDate);
         values.put(TaskContract.TaskEntry.TASK_COLUMN_DESCRIPTION, taskDesc);
-        values.put(TaskContract.TaskEntry.TASK_COLUMN_STATE, Task.INPROGRESS);
+        values.put(TaskContract.TaskEntry.TASK_COLUMN_STATE, Task.INPROGRESS_STATE);
 
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(TaskContract.TaskEntry.TABLE_NAME, null, values);
 
-        Toast.makeText(this, "A new task was added with id " + newRowId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "A New Task Was Successfully Added", Toast.LENGTH_SHORT).show();
     }
 }
